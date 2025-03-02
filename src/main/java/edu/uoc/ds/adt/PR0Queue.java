@@ -7,10 +7,10 @@ import edu.uoc.ds.adt.sequential.QueueArrayImpl;
 public class PR0Queue {
 
     //Attributes
-    public final int CAPACITY = 10;
+    public final int CAPACITY = 15;
 
     //Queue
-    private Queue<Character> queue;
+    private Queue<Integer> queue;
 
     public PR0Queue() {
         newQueue();
@@ -19,7 +19,7 @@ public class PR0Queue {
         queue = new QueueArrayImpl<>(CAPACITY);
     }
 
-
+    /*
     public String clearFullQueue() {
         StringBuilder sb = new StringBuilder();
         char r;
@@ -28,12 +28,17 @@ public class PR0Queue {
         }
         return sb.toString();
     }
+    */
 
-    public Queue<Character> getQueue() {
+    public Queue<Integer> getQueue() {
         return this.queue;
     }
 
-    public void add(Character c) {
+    public void add(Integer c) {
         this.queue.add(c);
+    }
+
+    public int poll() {
+        return queue.poll();
     }
 }

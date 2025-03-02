@@ -11,9 +11,15 @@ public class PR0StackTest {
     PR0Stack pr0q;
 
     private void fillStack() {
-        for (char c = '0'; c < '9'; c++) {
-            pr0q.push(Character.valueOf(c));
+        for (int c = 0; c < 15; c++) {
+            pr0q.push(funcionCalculo(c));
         }
+    }
+
+    private static int funcionCalculo(int number) {
+
+        int resultado = (int) Math.pow(number, 2) + 3*number +2;
+        return resultado;
     }
 
     @Before
@@ -34,9 +40,24 @@ public class PR0StackTest {
     @org.junit.Test
     public void stackTest() {
 
-        assertEquals(this.pr0q.CAPACITY-1, this.pr0q.getStack().size());
+        assertEquals(this.pr0q.CAPACITY, this.pr0q.getStack().size());
 
-        assertEquals(this.pr0q.clearAllStack(), new String("8 7 6 5 4 3 2 1 0 "));
+        assertEquals(240, pr0q.pop());
+        assertEquals(210, pr0q.pop());
+        assertEquals(182, pr0q.pop());
+        assertEquals(156, pr0q.pop());
+        assertEquals(132, pr0q.pop());
+        assertEquals(110, pr0q.pop());
+        assertEquals(90, pr0q.pop());
+        assertEquals(72, pr0q.pop());
+        assertEquals(56, pr0q.pop());
+        assertEquals(42, pr0q.pop());
+        assertEquals(30, pr0q.pop());
+        assertEquals(20, pr0q.pop());
+        assertEquals(12, pr0q.pop());
+        assertEquals(6, pr0q.pop());
+        assertEquals(2, pr0q.pop());
+        //assertEquals(this.pr0q.clearAllStack(), new String("8 7 6 5 4 3 2 1 0 "));
 
         assertEquals(0, this.pr0q.getStack().size());
     }
